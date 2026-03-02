@@ -12,7 +12,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.elvin</groupId>
-    <artifactId>mianmian</artifactId>
+    <artifactId>mianmian_backend</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>springboot-init</name>
     <properties>
