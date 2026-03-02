@@ -1,6 +1,12 @@
 ###   ###
 ###    ###
 
+# Windows zone identifier files
+*:Zone.Identifier
+
+.DS_Store
+**/.DS_Store
+
 HELP.md
 target/
 !.mvn/wrapper/maven-wrapper.jar
