@@ -1,19 +1,69 @@
-###   ###
-###    ###
-
-# Windows zone identifier files
-*:Zone.Identifier
-
+###########################################
+# 1. 基础环境与 IDE 忽略 (Windows/macOS/JetBrains/VSCode)
+###########################################
+# OS files
 .DS_Store
 **/.DS_Store
+*:Zone.Identifier
 
-HELP.md
+# JetBrains (IntelliJ, WebStorm, etc.)
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+gen/
+
+# VS Code
+.vscode/
+
+###########################################
+# 2. 前端项目忽略 (mianmian_frontend)
+###########################################
+# 依赖
+**/node_modules/
+**/.pnp
+**/.pnp.js
+**/.yarn/install-state.gz
+
+# Next.js & 构建输出
+**/.next/
+**/out/
+**/build/
+**/dist/
+**/coverage/
+
+# 日志与调试
+**/*.log*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# TypeScript
+**/*.tsbuildinfo
+**/next-env.d.ts
+
+# Vercel
+**/.vercel
+
+###########################################
+# 3. 后端项目忽略 (Java/Maven/Spring)
+###########################################
+# 编译输出
 **/target/
-!.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
+**/build/
+**/bin/
 
-### STS ###
+# Maven 运行支持
+!.mvn/wrapper/maven-wrapper.jar
+.mvn/timing.properties
+release.properties
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+
+# STS / Eclipse 特有
 .apt_generated
 .classpath
 .factorypath
@@ -22,38 +72,19 @@ HELP.md
 .springBeans
 .sts4-cache
 
-### IntelliJ IDEA ###
-.idea
-*.iws
-*.iml
-*.ipr
+###########################################
+# 4. 通用敏感信息与配置文件
+###########################################
+# 忽略所有环境配置文件 (极其重要)
+**/*.env
+**/*.env*.local
 
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
+# 忽略密钥文件
+**/*.pem
+**/*.jks
+**/*.p12
 
-### VS Code ###
-.vscode/
-### Java template
-# Compiled class file
-*.class
-
-# Log file
-*.log
-
-# BlueJ files
-*.ctxt
-
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
+# 忽略所有打包后的压缩/安装包
 *.jar
 *.war
 *.nar
@@ -61,108 +92,3 @@ build/
 *.zip
 *.tar.gz
 *.rar
-
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
-
-### Maven template
-**/target/
-pom.xml.tag
-pom.xml.releaseBackup
-pom.xml.versionsBackup
-pom.xml.next
-release.properties
-dependency-reduced-pom.xml
-buildNumber.properties
-.mvn/timing.properties
-# https://github.com/takari/maven-wrapper#usage-without-binary-jar
-.mvn/wrapper/maven-wrapper.jar
-
-### JetBrains template
-# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio, WebStorm and Rider
-# Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
-
-# User-specific stuff
-.idea/**/workspace.xml
-.idea/**/tasks.xml
-.idea/**/usage.statistics.xml
-.idea/**/dictionaries
-.idea/**/shelf
-
-# Generated files
-.idea/**/contentModel.xml
-
-# Sensitive or high-churn files
-.idea/**/dataSources/
-.idea/**/dataSources.ids
-.idea/**/dataSources.local.xml
-.idea/**/sqlDataSources.xml
-.idea/**/dynamic.xml
-.idea/**/uiDesigner.xml
-.idea/**/dbnavigator.xml
-
-# Gradle
-.idea/**/gradle.xml
-.idea/**/libraries
-
-# Gradle and Maven with auto-import
-# When using Gradle or Maven with auto-import, you should exclude module files,
-# since they will be recreated, and may cause churn.  Uncomment if using
-# auto-import.
-# .idea/artifacts
-# .idea/compiler.xml
-# .idea/jarRepositories.xml
-# .idea/modules.xml
-# .idea/*.iml
-# .idea/modules
-# *.iml
-# *.ipr
-
-# CMake
-cmake-build-*/
-
-# Mongo Explorer plugin
-.idea/**/mongoSettings.xml
-
-# File-based project format
-*.iws
-
-# IntelliJ
-out/
-
-# mpeltonen/sbt-idea plugin
-.idea_modules/
-
-# JIRA plugin
-atlassian-ide-plugin.xml
-
-# Cursive Clojure plugin
-.idea/replstate.xml
-
-# Crashlytics plugin (for Android Studio and IntelliJ)
-com_crashlytics_export_strings.xml
-crashlytics.properties
-crashlytics-build.properties
-fabric.properties
-
-# Editor-based Rest Client
-.idea/httpRequests
-
-# Android studio 3.1+ serialized cache file
-.idea/caches/build_file_checksums.ser
-
-###########################################
-# MianMian Project Custom Overrides
-###########################################
-
-# 确保忽略所有子模块的编译文件夹
-**/target/
-**/build/
-**/out/
-
-# 前端依赖与构建
-**/node_modules/
-**/dist/
-
-# 敏感配置文件 (例如数据库密码)
-**/*.env
